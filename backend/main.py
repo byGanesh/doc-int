@@ -17,10 +17,18 @@ async def analyze_frame(file: UploadFile = File(...)):
         cv2.IMREAD_COLOR,
     )
 
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
     if image is None:
         return {"valid_image": False}
+
+    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    edges = cv2.Canny(gray, 50, 150)
+    #cv2.imwrite("tmp/edges.jpg", edges)
+
+    contours, _ = cv2.findContours(
+        edges,
+        cv2.RETR_EXTERNAL,
+        cv2.CHAIN_APPROX_SIMPLE,
+    )
 
     h, w = image.shape[:2]
 
@@ -30,4 +38,5 @@ async def analyze_frame(file: UploadFile = File(...)):
         "height": h,
         "channels": image.shape[2],
         "gray_shape": gray.shape,
+        "contours_found": len(contours)
     }
