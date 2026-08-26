@@ -1,0 +1,90 @@
+
+# ============================================================
+# Environment / Secrets
+# ============================================================
+
+.env
+.env.*
+
+# ============================================================
+# Python
+# ============================================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+.venv/
+venv/
+env/
+ENV/
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+*.egg-info/
+dist/
+build/
+
+# ============================================================
+# Flutter / Dart
+# ============================================================
+
+app/.dart_tool/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/.packages
+app/.pub-cache/
+app/build/
+
+app/.metadata
+
+# Flutter generated files
+app/android/.gradle/
+app/android/local.properties
+
+app/ios/Pods/
+app/ios/.symlinks/
+app/ios/Flutter/ephemeral/
+app/ios/Flutter/Generated.xcconfig
+app/ios/Flutter/flutter_export_environment.sh
+
+# ============================================================
+# Generated / Runtime Files
+# ============================================================
+
+*.log
+*.tmp
+
+# ============================================================
+# ML / CV Artifacts
+# ============================================================
+
+# Model weights / checkpoints
+*.pt
+*.pth
+*.onnx
+*.h5
+*.keras
+*.pkl
+*.joblib
+
+# Generated outputs
+outputs/
+runs/
+checkpoints/
+
+# ============================================================
+# Local test data
+# ============================================================
+
+# Ignore local captures by default
+samples/captures/
+samples/output/
+
+# ============================================================
+# Docker
+# ============================================================
+
+*.pid
